@@ -1,0 +1,11 @@
+django-admin startproject stats_site
+python manage.py startapp stats_app
+
+python manage.py makemigrations stats_app
+python manage.py sqlmigrate stats_app 0002
+python manage.py migrate
+
+
+python convert_data.py 
+python manage.py loaddata data/users_conv.json
+python manage.py loaddata data/users_statistic_conv.json

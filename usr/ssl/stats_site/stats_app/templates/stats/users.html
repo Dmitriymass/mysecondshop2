@@ -1,0 +1,9 @@
+{% if users %}
+    <ul>
+    {% for user in users %}
+      <li><a href="/stats/users/{{ user.id }}/">{{user.first_name}}, {{user.last_name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No users are available.</p>
+{% endif %}

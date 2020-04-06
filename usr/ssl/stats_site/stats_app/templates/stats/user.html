@@ -1,0 +1,19 @@
+{% if user %}
+<h1>User {{user.first_name}}, {{user.last_name}}</h1>
+<p>Statistics:</p>
+
+{% if user_stats %}
+<table border="1">
+    <tr><th>Date</th><th>Page views</th><th>Clicks</th></tr>
+    {% for stat_rec in user_stats %}
+      <tr>
+          <td>{{stat_rec.date}}</td><td>{{stat_rec.page_views}}</td><td>{{stat_rec.clicks}}</td></tr>
+      </tr>
+    {% endfor %}
+    </ul>
+</table>
+{% else %}
+    <p>No statistics is available.</p>
+{% endif %}
+
+{% endif %}
